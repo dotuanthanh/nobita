@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body  onload="docReady()">
+<img id="myImg" src="https://images-na.ssl-images-amazon.com/images/I/51eeCsztN6L._AC_SX522_.jpg" style="width: 100px;height: 100px;position: absolute ;left: 0px ;top: 0px" />
+
+</body >
+</html>
+<script>
+    function Up() {
+        let element = document.getElementById('myImg')
+        element.style.top = parseInt(element.style.top) - 5 + 'px'
+    }
+
+    function Down() {
+        let element = document.getElementById('myImg')
+        element.style.top = parseInt(element.style.top) + 5 + 'px'
+    }
+
+    function Right() {
+        let element = document.getElementById('myImg')
+        element.style.left = parseInt(element.style.left) + 5 + 'px'
+    }
+
+    function Left() {
+        let element = document.getElementById('myImg')
+        element.style.left = parseInt(element.style.left) - 5 + 'px'
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                Left();
+                break;
+            case 39:
+                Right();
+                break;
+            case 38:
+                Up();
+                break;
+            case 40:
+                Down();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+
+</script>
